@@ -5,7 +5,7 @@ import axios from 'axios';
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const [selectedRover, setSelectedRover] = useState('Curiosity');
+  const [selectedRover, setSelectedRover] = useState('Curiosity'); // default to Curiosity
   const [roverPhotos, setRoverPhotos] = useState([]);
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -15,7 +15,7 @@ function App() {
         const url = `http://roverphotos.test/api/rover?rover=${encodeURIComponent(selectedRover)}`;
         const response = await axios.get(url, {
           headers: {
-            'Authorization': 'test_api_token'
+            'Authorization': 'test_api_token' // This would be dynamic, for test purposes its fixed
           }
         });
         setLoading(false);  // change the state to hide the loading
@@ -27,14 +27,17 @@ function App() {
     fetchData();
   }, [selectedRover]); // Empty dependency array means this effect runs once after initial render
 
+  // Used for the selection input
   const handleRoverChange = (event) => {
     setSelectedRover(event.target.value);
   };
 
+  // Used for the modal
   const openImage = (image) => {
     setSelectedImage(image);
   };
 
+  // Used for the modal
   const closeImage = () => {
     setSelectedImage(null);
   };
