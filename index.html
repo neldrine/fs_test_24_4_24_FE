@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RoverGram</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light">
+        <span class="navbar-brand mb-0 h1">RoverGram</span>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 mt-4">
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Filter by Rover</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <option class="curiosity">Curiosity</option>
+                        <option class="opportunity">Opportunity</option>
+                        <option class="spirit">Spirit</option>
+                        <option class="all">View All</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div id="root"></div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
