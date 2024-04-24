@@ -1,8 +1,14 @@
-# React + Vite
+## This is the frontend for the Rover Image Viewer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ - This is built using Vite + React
+ - To keep things quick I've used bootstrap UI
+ - Used useeffect to make requests to the laravel API
+ - State is used to manage the modal image, filter options for the rovers, loading state and the response from the API
 
-Currently, two official plugins are available:
+Things I would improve
+ - Images from the Opportunity and Sprint return a webpage instead of an image. If I had time I would have created logic to handle how its displayed
+ - Create components rather than putting it one file
+ - Used https://laravel.com/docs/11.x/frontend#inertia to keep the codebase in one repo rather 2. For the sake of simplicity and meeting the allocated time I've decided to split it.
+ - Better git branching strategy rather than pushing it all into main.
+ - I would use native JavaScript for a simple task like this rather than using React. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
