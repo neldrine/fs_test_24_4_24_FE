@@ -62,7 +62,12 @@ function App() {
           <h2>{roverName}</h2>
           {photos.map(photo => (
             <div key={photo.id} className="card my-3">
-              <img src={photo.img_src} alt={`Photo taken by ${roverName}`} />
+               <img
+                src={photo.img_src}
+                alt={`Photo taken by ${roverName}`}
+                onClick={() => openImage(photo.img_src)}
+                style={{ cursor: 'pointer' }}
+              />
               <div className="card-body">
                 <p>Photo taken by <strong>{roverName}</strong></p>
                 <small className="text-muted">Posted on {photo.earth_date}</small>
@@ -71,6 +76,11 @@ function App() {
           ))}
         </div>
       ))}
+      {selectedImage && (
+        <div className="modal" onClick={closeImage} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0, 0, 0, 1)' }}>
+          <img src={selectedImage} alt='Maximised Image of Mars' style={{ maxWidth: '90%', maxHeight: '90%' }} onClick={(e) => e.stopPropagation()} />
+        </div>
+      )}
     </div>
     </>
   )
